@@ -1,56 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp()); // root widget MyApp()
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'hello',
-      theme: ThemeData(primarySwatch: Colors.purple),
-      home: RandomWords(),
+      title: 'study buddy',
+      theme: ThemeData(primaryColor: Colors.white),
+      home: HomePage(),
     );
   }
 }
 
-class RandomWords extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _RandomWordsState createState() => _RandomWordsState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final _biggerFont = TextStyle(fontSize: 18.0);
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Startup Name Generator'),
-      ),
-      body: _buildSuggestions(),
-    );
-  }
-
-  Widget _buildSuggestions() {
-    return ListView.builder(
-        padding: EdgeInsets.all(16.0),
-        itemBuilder: (context, i) {
-          if (i.isOdd) return Divider();
-
-          final index = i ~/ 2;
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-          return _buildRow(_suggestions[index]);
-        });
-  }
-
-  Widget _buildRow(WordPair w) {
-    return ListTile(
-      title: Text(
-        w.asPascalCase,
-        style: _biggerFont,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        label: const Text('start'),
+        icon: const Icon(Icons.alarm_on),
+        backgroundColor: Colors.lightGreen.shade300,
       ),
     );
   }
