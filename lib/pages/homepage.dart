@@ -53,7 +53,8 @@ class _HomePageState extends State<HomePage> {
       actions: <Widget>[
         new TextButton(
           onPressed: () {
-            // Navigator.of(context).pop();
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, "/main");
           },
           // style: ButtonStyle(
 

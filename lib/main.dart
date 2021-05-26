@@ -1,8 +1,17 @@
+import 'package:buddy/pages/main_focus.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'pages/homepage.dart';
 import 'pages/user_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp()); // root widget MyApp()
+// Future<void> main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+//   runApp(MyApp());
+// }  // root widget MyApp()
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -10,10 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'study buddy',
       theme: ThemeData(primaryColor: Colors.white),
-      home: HomePage(),
-      // routes: {
-      //   "/user": (context) => UserPage(),
-      // }
+      initialRoute: "/user",
+      routes: {
+        "/" : (context) => HomePage(),
+        "/user": (context) => UserPage(),
+        "/main": (context) => MainFocus(),
+      }
     );
   }
 }
