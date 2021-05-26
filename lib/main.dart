@@ -11,10 +11,9 @@ class MyApp extends StatelessWidget {
       title: 'study buddy',
       theme: ThemeData(primaryColor: Colors.white),
       home: HomePage(),
-
-      routes: {
-        "/user" : (context) => UserPage(),
-      }
+      // routes: {
+      //   "/user": (context) => UserPage(),
+      // }
     );
   }
 }

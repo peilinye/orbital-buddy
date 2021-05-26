@@ -24,12 +24,7 @@ class UserPage extends StatelessWidget {
               color: Colors.grey,
               child: Text("SIGN UP"),
             ),
-            Container(
-              padding: EdgeInsets.all(20.0),
-              color: Colors.grey,
-              child: Text("LOGIN"),
-            ),
-        ],
+          ],
         ),
       ),
     );
